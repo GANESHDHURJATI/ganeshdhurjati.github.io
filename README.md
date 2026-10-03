@@ -4,14 +4,11 @@ Personal portfolio for Ganesh Dhurjati, a Georgia Tech computer science student 
 
 ## Structure
 
-- `dist/` — production-ready static site
-- `.github/workflows/deploy.yml` — GitHub Pages deployment workflow
-
-The site uses plain HTML, CSS, and JavaScript for fast loading, simple maintenance, and zero runtime dependencies.
+The production site is served directly from the repository root through GitHub Pages. It uses plain HTML, CSS, and JavaScript for fast loading, simple maintenance, and zero runtime dependencies.
 
 ## Local preview
 
-Serve the `dist` directory with any static web server, then open the printed local URL.
+Serve the repository root with any static web server, then open the printed local URL.
 
 ## Updating media later
 
