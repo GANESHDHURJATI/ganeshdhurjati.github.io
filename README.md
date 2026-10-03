@@ -16,4 +16,3 @@ Serve the `dist` directory with any static web server, then open the printed loc
 ## Updating media later
 
 The About section contains a prepared headshot slot. Project visuals are code-native placeholders that can be replaced or supplemented with optimized images and videos without changing the page structure.
-
