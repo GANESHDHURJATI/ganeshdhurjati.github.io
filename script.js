@@ -38,3 +38,10 @@ document.querySelectorAll('a[href^="#"]').forEach((link) => {
     if (target) window.history.replaceState(null, '', link.getAttribute('href'));
   });
 });
+
+document.addEventListener('keydown', (event) => {
+  const hero = document.querySelector('.handheld-hero');
+  if (!hero || hero.getBoundingClientRect().bottom < 0 || /input|textarea/i.test(event.target.tagName)) return;
+  if (event.key.toLowerCase() === 'a') document.querySelector('#about')?.scrollIntoView({ behavior: 'smooth' });
+  if (event.key.toLowerCase() === 'b') document.querySelector('#work')?.scrollIntoView({ behavior: 'smooth' });
+});
