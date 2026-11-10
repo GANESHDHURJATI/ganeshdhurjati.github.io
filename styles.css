@@ -394,3 +394,14 @@ body.game-only-site { background:#071a16; }
 @media (max-width:620px){.game-only-site .site-header{background:rgba(5,24,19,.95)}.forest-moon{width:58px;height:58px;right:7%}.mountain{height:34%}.forest-line{height:24%}.game-only-site .boot-copy h1{font-family:"Arial Rounded MT Bold","Arial Black",sans-serif}.retro-word::before,.phosphor-word::before{transform:translate(4px,1px)}.retro-word::after,.phosphor-word::after{transform:translate(-4px,-1px)}}
 @media (prefers-reduced-motion:reduce){.firefly,.scene-light,.scene-mist,.retro-word::before,.retro-word::after,.phosphor-word::before,.phosphor-word::after{animation:none!important}}
 
+/* Painterly sanctuary artwork */
+.game-only-site .handheld-hero::before { background-image:linear-gradient(180deg,rgba(4,24,16,.08),rgba(3,20,13,.24)),url("assets/forest-sanctuary-v1.webp"); background-position:center; background-size:cover; }
+.game-only-site .handheld-hero::after { padding:9px 14px; bottom:13px; color:#f1dd93; background:rgba(3,22,13,.52); border:1px solid rgba(229,203,112,.35); border-radius:2px; backdrop-filter:blur(5px); }
+.forest-backdrop { display:none; }
+.game-only-site .game-shell { background-image:linear-gradient(180deg,rgba(4,20,13,.18),rgba(4,20,13,.34)),url("assets/forest-sanctuary-v1.webp"); background-position:center; background-size:cover; }
+.serene-scene { background-image:linear-gradient(180deg,rgba(5,28,18,.16),rgba(2,17,11,.42)),url("assets/forest-sanctuary-v1.webp"); background-position:center; background-size:cover; filter:saturate(.9) brightness(.72); transform:scale(1.025); }
+.serene-scene::after { content:""; position:absolute; inset:0; background:radial-gradient(ellipse at center,transparent 30%,rgba(2,18,11,.27) 82%,rgba(1,10,7,.5)); }
+.scene-moon,.scene-peak,.scene-woods { display:none; }.scene-mist { z-index:2; bottom:4%; opacity:.55; }.scene-light { z-index:3; }
+.game-only-site .game-rim { height:min(860px,calc(100svh - 68px)); }
+@media(max-width:850px){.game-only-site .game-rim{height:100svh}.game-only-site .handheld-hero::before{background-position:52% center}.serene-scene{background-position:54% center}}
+
