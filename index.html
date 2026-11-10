@@ -10,8 +10,8 @@
   <meta property="og:type" content="website">
   <title>Ganesh Dhurjati — Software Engineer</title>
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
-  <link rel="stylesheet" href="styles.css?v=20261109-1">
-  <script src="script.js?v=20261003-2" defer></script>
+  <link rel="stylesheet" href="styles.css?v=20261109-2">
+  <script src="script.js?v=20261109-2" defer></script>
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
@@ -44,7 +44,7 @@
             <span class="boot-label">SOFTWARE ENGINEER</span>
             <h1 id="hero-title">Ganesh<br>Dhurjati</h1>
             <p>Intelligent systems. Real-world impact.</p>
-            <a class="screen-prompt" href="#about" data-game-start>PRESS A TO START <span aria-hidden="true">↓</span></a>
+            <a class="screen-prompt" href="#game-portfolio" data-game-start>PRESS A TO START <span aria-hidden="true">→</span></a>
           </div>
           <div class="screen-pixels" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></div>
         </div>
@@ -53,10 +53,109 @@
           <div class="select-start"><span>SELECT</span><span>START</span></div>
           <div class="ab-controls">
             <a class="game-button game-b" href="#work" aria-label="B button: go to selected work">B</a>
-            <a class="game-button game-a" href="#about" aria-label="A button: meet Ganesh">A</a>
+            <a class="game-button game-a" href="#game-portfolio" data-game-start aria-label="A button: enter portfolio game mode">A</a>
           </div>
         </div>
         <div class="handheld-footer"><span>GANESH DHURJATI</span><span>BUILD · TEST · ITERATE</span></div>
+      </div>
+    </section>
+
+    <section class="game-shell" id="game-portfolio" aria-label="Interactive portfolio game mode" aria-hidden="true" tabindex="-1">
+      <div class="game-rim">
+        <div class="game-screen">
+          <header class="game-topbar">
+            <div><span class="game-led"></span><strong>GD-OS</strong><span>PORTFOLIO EDITION</span></div>
+            <div class="game-top-actions"><button type="button" data-game-recruiter>R: RECRUITER MODE</button><button type="button" data-game-exit>EXIT ×</button></div>
+          </header>
+
+          <div class="game-layout">
+            <aside class="game-sidebar" aria-label="Game navigation">
+              <div class="player-chip"><span>GD</span><p>GANESH DHURJATI<small>SOFTWARE ENGINEER</small></p></div>
+              <nav class="game-nav">
+                <button type="button" class="is-selected" data-game-nav="menu"><span>00</span>HOME</button>
+                <button type="button" data-game-nav="recruiter"><span>01</span>QUICK SCAN</button>
+                <button type="button" data-game-nav="about"><span>02</span>ABOUT</button>
+                <button type="button" data-game-nav="work"><span>03</span>WORK</button>
+                <button type="button" data-game-nav="experience"><span>04</span>EXPERIENCE</button>
+                <button type="button" data-game-nav="contact"><span>05</span>CONTACT</button>
+              </nav>
+              <div class="game-sidebar-meta"><span>ATLANTA, GA</span><span>AVAILABLE FOR SWE INTERNSHIPS</span></div>
+            </aside>
+
+            <div class="game-pages" aria-live="polite">
+              <article class="game-page is-active" data-game-page="menu">
+                <p class="game-kicker">PLAYER 01 / SELECT A FILE</p>
+                <h2>What do you want to know?</h2>
+                <p class="game-lede">Use ↑↓ and A, click a file, or press <kbd>R</kbd> for the recruiter speedrun.</p>
+                <div class="game-menu-grid">
+                  <button type="button" class="game-menu-card game-menu-featured" data-open-page="recruiter"><span>★ RECOMMENDED</span><strong>30-SECOND RECRUITER MODE</strong><small>The signal, no side quests.</small></button>
+                  <button type="button" class="game-menu-card" data-open-page="work"><span>SELECTED MISSIONS</span><strong>SEE THE WORK</strong><small>Healthcare, robotics, AI, products.</small></button>
+                  <button type="button" class="game-menu-card" data-open-page="experience"><span>PLAYER HISTORY</span><strong>EXPERIENCE LOG</strong><small>Leadership and shipped systems.</small></button>
+                  <button type="button" class="game-menu-card" data-open-page="about"><span>ORIGIN STORY</span><strong>ABOUT GANESH</strong><small>Motivation, interests, and a side quest.</small></button>
+                </div>
+                <div class="game-system-check"><span>SYSTEM CHECK</span><b>GPA 3.91</b><b>GEORGIA TECH</b><b>GRAD MAY 2028</b><b>10-PERSON TEAM LEAD</b></div>
+              </article>
+
+              <article class="game-page" data-game-page="recruiter">
+                <p class="game-kicker">QUICK SCAN / 30-SECOND BUILD</p>
+                <h2>The recruiter speedrun.</h2>
+                <p class="game-lede">Computer Science at Georgia Tech. I build reliable software across intelligent systems, healthcare technology, robotics, and full-stack products.</p>
+                <div class="speedrun-grid">
+                  <div><span>01 / ENGINEERING</span><strong>Python · Java · JavaScript</strong><p>Backend systems, APIs, data pipelines, responsive interfaces, and production-minded code.</p></div>
+                  <div><span>02 / OWNERSHIP</span><strong>Lead researcher</strong><p>Leading a 10-person software team building and field-testing connected healthcare systems.</p></div>
+                  <div><span>03 / IMPACT</span><strong>Real deployments</strong><p>Work validated in healthcare facilities and optimized across complex robotic systems.</p></div>
+                  <div><span>04 / BUILDER</span><strong>Technical + product</strong><p>Co-founded an AI platform serving three paying clients and generating about $3K MRR.</p></div>
+                </div>
+                <div class="game-cta-row"><button type="button" data-open-page="work">VIEW PROOF →</button><a href="https://www.linkedin.com/in/ganeshdhurjati/" target="_blank" rel="noopener">LINKEDIN ↗</a><a href="https://github.com/GANESHDHURJATI" target="_blank" rel="noopener">GITHUB ↗</a></div>
+              </article>
+
+              <article class="game-page" data-game-page="about">
+                <p class="game-kicker">PLAYER PROFILE / ABOUT</p>
+                <h2>Engineering with a reason.</h2>
+                <div class="game-copy-grid"><p>I’m Ganesh, a Georgia Tech Computer Science student concentrating in Artificial Intelligence and People. I’m drawn to software that has to perform beyond a demo—supporting healthcare teams, interpreting real-world data, or helping an intelligent system make a better decision.</p><p>I enjoy working across the stack, from algorithms and backend architecture to interfaces and deployment. Long term, I want to combine engineering judgment with business insight to build meaningful technology companies.</p></div>
+                <div class="side-quest"><span>SIDE QUEST UNLOCKED</span><strong>Violin + guitar</strong><p>Music keeps me patient, disciplined, and extremely aware when one tiny detail is off.</p></div>
+              </article>
+
+              <article class="game-page" data-game-page="work">
+                <p class="game-kicker">MISSION SELECT / PROJECTS</p>
+                <h2>Built for the world beyond the screen.</h2>
+                <div class="game-work-list">
+                  <div><span>01 / HEALTHCARE</span><strong>IoT in Health</strong><p>Connected systems for fall detection, environmental safety, and point-of-care use—field-tested in real healthcare settings.</p><small>PYTHON · IOT · DATA · LEADERSHIP</small></div>
+                  <div><span>02 / ROBOTICS</span><strong>Humanoid Robotics Platform</strong><p>Integrated perception, data processing, autonomy, and conversational features across a complex hardware-software platform.</p><small>PYTHON · AI/ML · SYSTEMS</small></div>
+                  <div><span>03 / PRODUCT</span><strong>Scribur</strong><p>An AI-powered operations platform with three paying clients and approximately $3K in monthly recurring revenue.</p><small>APIS · DATABASES · FULL-STACK</small></div>
+                  <div><span>04 / HACKATL</span><strong>ChromatoSense</strong><p>AI-assisted HPLC troubleshooting that flags suspicious laboratory runs and produces evidence-backed explanations.</p><small>FASTAPI · OPENCV · OPENAI API</small></div>
+                </div>
+                <div class="game-cta-row"><a href="#work" data-game-full-site>OPEN FULL PROJECT DETAILS ↓</a></div>
+              </article>
+
+              <article class="game-page" data-game-page="experience">
+                <p class="game-kicker">PLAYER HISTORY / EXPERIENCE</p>
+                <h2>Ownership at every level.</h2>
+                <div class="game-timeline">
+                  <div><time>2026 — NOW</time><strong>Undergraduate Lead Researcher</strong><span>Georgia Institute of Technology</span><p>Leading software development for connected healthcare systems and coordinating a 10-person engineering team.</p></div>
+                  <div><time>2024 — 2025</time><strong>Software Engineer Intern</strong><span>System Technology Works LLC</span><p>Developed and optimized Python software across intelligent robotics, real-time data processing, and AI-powered features.</p></div>
+                  <div><time>2023</time><strong>Tax Office Assistant</strong><span>Liberty Tax</span><p>Managed sensitive financial data and fast-moving client workflows with accuracy, judgment, and attention to detail.</p></div>
+                </div>
+              </article>
+
+              <article class="game-page" data-game-page="contact">
+                <p class="game-kicker">NEXT MISSION / CONTACT</p>
+                <h2>Want Player 01 on your team?</h2>
+                <p class="game-lede">I’m interested in software engineering opportunities across intelligent systems, healthcare technology, robotics, data, and full-stack products.</p>
+                <div class="contact-save-file"><span>STATUS</span><strong>OPEN TO OPPORTUNITIES</strong><span>LOCATION</span><strong>ATLANTA, GA</strong><span>RESPONSE PATH</span><strong>LINKEDIN</strong></div>
+                <div class="game-cta-row game-contact-actions"><a href="https://www.linkedin.com/in/ganeshdhurjati/" target="_blank" rel="noopener">START A CONVERSATION ↗</a><a href="https://github.com/GANESHDHURJATI" target="_blank" rel="noopener">EXPLORE GITHUB ↗</a></div>
+                <p class="contact-joke">No escort mission required. Clear requirements are appreciated.</p>
+              </article>
+            </div>
+          </div>
+
+          <footer class="game-controls-bar">
+            <div class="mini-dpad"><button type="button" data-game-up aria-label="Previous menu item">↑</button><button type="button" data-game-down aria-label="Next menu item">↓</button></div>
+            <p><kbd>↑↓</kbd> SELECT <kbd>A / ENTER</kbd> OPEN <kbd>B / ESC</kbd> BACK <kbd>R</kbd> QUICK SCAN</p>
+            <div class="mini-ab"><button type="button" data-game-back aria-label="Go back">B</button><button type="button" data-game-choose aria-label="Choose selected item">A</button></div>
+          </footer>
+          <div class="achievement-toast" role="status" aria-live="polite"><span>ACHIEVEMENT UNLOCKED</span><strong>RECRUITER SPEEDRUN</strong><small>30 seconds. Zero unnecessary lore.</small></div>
+        </div>
       </div>
     </section>
 
@@ -76,7 +175,7 @@
         <div class="about-story reveal">
           <div><span class="section-number">01</span><span class="eyebrow">About me</span></div>
           <h2 id="about-title">I care about what technology can change—not just what it can do.</h2>
-          <p class="about-intro">I'm Ganesh Dhurjati, a Computer Science student at Georgia Tech concentrating in Intelligence and People. I’m most energized by engineering that leaves the screen and has to work in the real world: software that interprets sensor data, helps a robot understand its environment, supports healthcare teams, or turns a complicated workflow into something people can actually use.</p>
+          <p class="about-intro">I'm Ganesh Dhurjati, a Computer Science student at Georgia Tech concentrating in Artificial Intelligence and People. I’m most energized by engineering that leaves the screen and has to work in the real world: software that interprets sensor data, helps a robot understand its environment, supports healthcare teams, or turns a complicated workflow into something people can actually use.</p>
           <div class="story-grid">
             <article><span>01 / THE WORK</span><h3>Systems, end to end.</h3><p>My interests span algorithms, intelligent systems, robotics, automation, backend architecture, and full-stack development. I like understanding the whole system—from data and models to interfaces and deployment—and I care about writing robust software rather than stopping at a proof of concept.</p></article>
             <article><span>02 / THE WHY</span><h3>Technology with leverage.</h3><p>Working on humanoid robotics and deploying connected-health systems in clinical environments made the value of reliable engineering tangible to me. Long term, I want to combine engineering judgment with business and financial insight to build and grow technology companies, especially in healthcare and automation.</p></article>
