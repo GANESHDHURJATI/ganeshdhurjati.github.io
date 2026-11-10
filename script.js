@@ -34,7 +34,7 @@ if ('IntersectionObserver' in window) {
 
 document.querySelectorAll('a[href^="#"]').forEach((link) => {
   link.addEventListener('click', () => {
-    if (link.matches('[data-game-start], [data-game-full-site]')) return;
+    if (link.matches('[data-game-start]')) return;
     const target = document.querySelector(link.getAttribute('href'));
     if (target) window.history.replaceState(null, '', link.getAttribute('href'));
   });
@@ -44,11 +44,9 @@ const gameShell = document.querySelector('.game-shell');
 const handheld = document.querySelector('.handheld');
 const gamePages = [...document.querySelectorAll('[data-game-page]')];
 const gameNavButtons = [...document.querySelectorAll('[data-game-nav]')];
-const achievementToast = document.querySelector('.achievement-toast');
 let gameIsOpen = false;
 let currentGamePage = 'menu';
 let selectedGameIndex = 0;
-let achievementTimer;
 let lastGameTrigger;
 
 const getGameChoices = () => {
@@ -67,13 +65,6 @@ const selectGameChoice = (index, focus = false) => {
   if (focus) selected.focus({ preventScroll: true });
 };
 
-const showAchievement = () => {
-  if (!achievementToast) return;
-  window.clearTimeout(achievementTimer);
-  achievementToast.classList.add('is-visible');
-  achievementTimer = window.setTimeout(() => achievementToast.classList.remove('is-visible'), 3200);
-};
-
 const showGamePage = (pageName) => {
   if (!gamePages.some((page) => page.dataset.gamePage === pageName)) return;
   currentGamePage = pageName;
@@ -83,7 +74,6 @@ const showGamePage = (pageName) => {
   if (pageScroller) pageScroller.scrollTop = 0;
   selectedGameIndex = 0;
   selectGameChoice(0);
-  if (pageName === 'recruiter') showAchievement();
 };
 
 const enterGame = (pageName = 'menu', trigger = document.activeElement) => {
@@ -107,7 +97,6 @@ const exitGame = () => {
   gameShell.classList.remove('is-open');
   gameShell.setAttribute('aria-hidden', 'true');
   document.body.classList.remove('game-open');
-  achievementToast?.classList.remove('is-visible');
   window.setTimeout(() => lastGameTrigger?.focus?.({ preventScroll: true }), 50);
 };
 
@@ -121,26 +110,16 @@ const chooseGameItem = () => {
 document.querySelectorAll('[data-game-start]').forEach((trigger) => {
   trigger.addEventListener('click', (event) => {
     event.preventDefault();
-    enterGame('menu', trigger);
+    enterGame(trigger.dataset.gameStart || 'menu', trigger);
   });
 });
 gameNavButtons.forEach((button) => button.addEventListener('click', () => showGamePage(button.dataset.gameNav)));
 document.querySelectorAll('[data-open-page]').forEach((button) => button.addEventListener('click', () => showGamePage(button.dataset.openPage)));
-document.querySelector('[data-game-recruiter]')?.addEventListener('click', () => showGamePage('recruiter'));
 document.querySelector('[data-game-exit]')?.addEventListener('click', exitGame);
 document.querySelector('[data-game-back]')?.addEventListener('click', gameBack);
 document.querySelector('[data-game-choose]')?.addEventListener('click', chooseGameItem);
 document.querySelector('[data-game-up]')?.addEventListener('click', () => selectGameChoice(selectedGameIndex - 1, true));
 document.querySelector('[data-game-down]')?.addEventListener('click', () => selectGameChoice(selectedGameIndex + 1, true));
-document.querySelectorAll('[data-game-full-site]').forEach((link) => {
-  link.addEventListener('click', (event) => {
-    event.preventDefault();
-    const target = document.querySelector(link.getAttribute('href'));
-    exitGame();
-    window.setTimeout(() => target?.scrollIntoView({ behavior: 'smooth' }), 280);
-  });
-});
-
 document.addEventListener('keydown', (event) => {
   if (gameIsOpen) {
     if (/input|textarea|select/i.test(event.target.tagName)) return;
@@ -159,15 +138,12 @@ document.addEventListener('keydown', (event) => {
     } else if (key === 'b' || key === 'escape') {
       event.preventDefault();
       gameBack();
-    } else if (key === 'r') {
-      event.preventDefault();
-      showGamePage('recruiter');
     }
     return;
   }
   const hero = document.querySelector('.handheld-hero');
   if (!hero || hero.getBoundingClientRect().bottom < 0 || /input|textarea/i.test(event.target.tagName)) return;
   if (event.key.toLowerCase() === 'a') enterGame('menu', document.querySelector('[data-game-start]'));
-  if (event.key.toLowerCase() === 'b') document.querySelector('#work')?.scrollIntoView({ behavior: 'smooth' });
+  if (event.key.toLowerCase() === 'b') enterGame('work', document.querySelector('[data-game-start="work"]'));
 });
 
