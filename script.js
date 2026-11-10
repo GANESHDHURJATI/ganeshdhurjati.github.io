@@ -66,6 +66,7 @@ const enterGame = (pageName = 'menu', trigger = document.activeElement) => {
   if (!gameShell || gameIsOpen) return;
   gameIsOpen = true;
   lastGameTrigger = trigger;
+  document.body.classList.add('game-launching');
   handheld?.classList.add('is-launching');
   window.setTimeout(() => {
     document.body.classList.add('game-open');
@@ -74,7 +75,8 @@ const enterGame = (pageName = 'menu', trigger = document.activeElement) => {
     showGamePage(pageName);
     gameShell.focus({ preventScroll: true });
     handheld?.classList.remove('is-launching');
-  }, window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 30 : 560);
+    window.setTimeout(() => document.body.classList.remove('game-launching'), 320);
+  }, window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 30 : 680);
 };
 
 const exitGame = () => {
@@ -82,7 +84,7 @@ const exitGame = () => {
   gameIsOpen = false;
   gameShell.classList.remove('is-open');
   gameShell.setAttribute('aria-hidden', 'true');
-  document.body.classList.remove('game-open');
+  document.body.classList.remove('game-open', 'game-launching');
   window.setTimeout(() => lastGameTrigger?.focus?.({ preventScroll: true }), 50);
 };
 
@@ -132,4 +134,3 @@ document.addEventListener('keydown', (event) => {
   if (event.key.toLowerCase() === 'a') enterGame('menu', document.querySelector('[data-game-start]'));
   if (event.key.toLowerCase() === 'b') enterGame('work', document.querySelector('[data-game-start="work"]'));
 });
-

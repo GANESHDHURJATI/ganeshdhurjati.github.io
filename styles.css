@@ -537,3 +537,198 @@ body.game-only-site { background:#238fd1; }
   .hero-launch-hit { top:calc(50% + .85vw); width:20vw; height:4.5vw; }
   .hero-a-hit { left:64.7%; top:calc(50% + 10.5vw); width:7.5vw; height:7.5vw; }
 }
+
+/* Viewport-safe hero + seamless in-device portfolio */
+.game-only-site .handheld-hero {
+  height:100dvh;
+  min-height:100dvh;
+  background-color:#2297e1;
+  background-image:linear-gradient(rgba(27,142,210,.08),rgba(24,107,78,.08)),url("assets/platformer-world-v1.webp");
+  background-position:center;
+  background-repeat:no-repeat;
+  background-size:cover;
+}
+.game-only-site main { height:100dvh; min-height:100dvh; overflow:hidden; }
+.game-only-site .handheld-hero::before {
+  position:fixed;
+  background-color:#2297e1;
+  background-image:url("assets/platformer-hero-v1.webp"),url("assets/platformer-world-v1.webp");
+  background-position:center,center;
+  background-repeat:no-repeat,no-repeat;
+  background-size:contain,cover;
+  transform-origin:50% 38%;
+  transition:transform .68s cubic-bezier(.18,.82,.2,1),filter .48s ease,opacity .48s ease;
+}
+.game-only-site.game-launching .handheld-hero::before,
+.game-only-site .handheld-hero:has(.handheld.is-launching)::before {
+  transform:scale(2.48);
+  filter:brightness(.72) saturate(.9) blur(1.2px);
+}
+
+/* Hotspots follow the contained 1680 × 944 artwork instead of the viewport. */
+.hero-launch-hit { left:50%; top:51.5%; width:35.6vh; height:5.4vh; }
+.hero-a-hit { left:calc(50% + 26.2vh); top:68.7%; width:12.5vh; height:12.5vh; }
+@media (max-aspect-ratio:17797/10000) {
+  .hero-launch-hit { left:50%; top:calc(50% + .85vw); width:20vw; height:3.3vw; }
+  .hero-a-hit { left:64.7%; top:calc(50% + 10.5vw); width:7.1vw; height:7.1vw; }
+}
+
+.game-only-site .game-shell {
+  padding:0;
+  background:#071713;
+  transition:opacity .24s ease,visibility .24s;
+}
+.game-only-site .game-shell::before {
+  z-index:4;
+  opacity:.13;
+  background:repeating-linear-gradient(to bottom,transparent 0 3px,rgba(184,255,173,.12) 4px,transparent 5px);
+}
+.game-only-site .serene-scene { display:none; }
+.game-only-site .game-rim {
+  width:100%;
+  height:100svh;
+  padding:clamp(8px,1vw,16px);
+  background:
+    linear-gradient(90deg,#b63e35 0 7px,transparent 7px calc(100% - 7px),#b63e35 calc(100% - 7px)),
+    linear-gradient(145deg,#fff0cf 0,#e6cfaa 52%,#c38f68 100%);
+  border:0;
+  border-radius:0;
+  box-shadow:inset 0 0 0 2px rgba(105,62,42,.7),inset 0 0 22px rgba(102,54,34,.22);
+  opacity:0;
+  transform:scale(.94);
+  transition:transform .42s cubic-bezier(.18,.84,.2,1),opacity .22s ease;
+}
+.game-only-site .game-shell.is-open .game-rim { opacity:1; transform:scale(1); }
+.game-only-site .game-screen {
+  position:relative;
+  color:#f2f3d5;
+  background:
+    radial-gradient(circle at 50% 15%,rgba(52,126,85,.13),transparent 38%),
+    linear-gradient(rgba(7,27,23,.93),rgba(5,24,20,.98));
+  border:clamp(5px,.65vw,10px) solid #272d2b;
+  border-top-color:#404846;
+  border-left-color:#39413f;
+  border-radius:clamp(12px,1.5vw,24px);
+  box-shadow:inset 0 0 0 2px #020706,inset 0 0 90px rgba(80,191,108,.12),0 4px 9px rgba(77,43,30,.28);
+  font-family:"IBM Plex Mono","Lucida Console",monospace;
+}
+.game-only-site .game-screen::after {
+  content:"";
+  position:absolute;
+  z-index:0;
+  left:0;
+  right:0;
+  bottom:50px;
+  height:13px;
+  opacity:.34;
+  pointer-events:none;
+  background:repeating-linear-gradient(90deg,#72d34e 0 22px,#386d33 22px 26px,#a94732 26px 45px,#613021 45px 48px);
+  clip-path:polygon(0 48%,2% 48%,2% 10%,4% 10%,4% 65%,7% 65%,7% 28%,10% 28%,10% 72%,14% 72%,14% 38%,18% 38%,18% 62%,23% 62%,23% 20%,27% 20%,27% 68%,32% 68%,32% 40%,37% 40%,37% 75%,43% 75%,43% 25%,48% 25%,48% 68%,54% 68%,54% 42%,60% 42%,60% 74%,66% 74%,66% 19%,71% 19%,71% 62%,77% 62%,77% 34%,83% 34%,83% 70%,89% 70%,89% 24%,94% 24%,94% 57%,100% 57%,100% 100%,0 100%);
+}
+.game-only-site .game-topbar,.game-only-site .game-controls-bar,.game-only-site .game-sidebar { position:relative; z-index:2; background:rgba(4,20,17,.96); border-color:rgba(132,217,102,.32); }
+.game-only-site .game-topbar { min-height:48px; padding:8px 18px; font-family:"Pixelify Sans",monospace; font-size:.68rem; letter-spacing:.07em; }
+.game-only-site .game-top-actions button { color:#fff0a9; border:1px solid #6f9d58; background:#102d20; font-family:"Pixelify Sans",monospace; }
+.game-only-site .game-layout { position:relative; z-index:1; display:grid; grid-template-columns:1fr; grid-template-rows:auto minmax(0,1fr); }
+.game-only-site .game-sidebar {
+  min-height:auto;
+  display:grid;
+  grid-template-columns:auto minmax(0,1fr) auto;
+  align-items:center;
+  gap:clamp(16px,3vw,46px);
+  padding:10px clamp(14px,2vw,28px);
+  border-right:0;
+  border-bottom:1px solid rgba(132,217,102,.32);
+}
+.game-only-site .player-chip { padding:0; border:0; min-width:max-content; }
+.game-only-site .player-chip>span { width:34px; height:34px; color:#17351f; background:#ffdf6b; border-color:#fff2ab; box-shadow:3px 3px 0 #b64534; font-family:"Pixelify Sans",monospace; }
+.game-only-site .player-chip p { font-family:"Pixelify Sans",monospace; font-size:.68rem; color:#fff0a9; }
+.game-only-site .player-chip small { margin-top:2px; color:#75dc83; font-size:.48rem; }
+.game-only-site .game-nav { display:flex; justify-content:center; gap:6px; margin:0; }
+.game-only-site .game-nav button {
+  width:auto;
+  min-height:36px;
+  padding:0 clamp(9px,1.25vw,18px);
+  color:#bad1bf;
+  border:1px solid transparent;
+  font-family:"Pixelify Sans",monospace;
+  font-size:.72rem;
+  letter-spacing:.035em;
+}
+.game-only-site .game-nav button span { color:#63c97a; }
+.game-only-site .game-nav button:hover,.game-only-site .game-nav button:focus-visible,.game-only-site .game-nav button.is-selected { color:#18361f; background:#ffdf6b; border-color:#fff4b5; box-shadow:inset 4px 0 0 #e44d3f,0 3px 0 #82372d; }
+.game-only-site .game-sidebar-meta { display:flex; gap:12px; margin:0; padding:0; border:0; min-width:max-content; font-family:"Pixelify Sans",monospace; }
+.game-only-site .game-sidebar-meta span:first-child { color:#a6bdad; }
+.game-only-site .game-sidebar-meta span:last-child { color:#7ee08d; }
+
+.game-only-site .game-pages { z-index:1; scrollbar-color:#72c96a #0b251b; }
+.game-only-site .game-page { width:min(100%,1160px); min-height:100%; margin:0 auto; padding:clamp(28px,5vh,62px) clamp(24px,5vw,70px) 76px; }
+.game-only-site .game-kicker { color:#83e28e; font-family:"Pixelify Sans",monospace; font-size:.72rem; letter-spacing:.08em; text-shadow:2px 2px 0 #174d35; }
+.game-only-site .game-page h2 {
+  max-width:1000px;
+  margin-bottom:13px;
+  color:#fff0a9;
+  font-family:"Pixelify Sans",monospace;
+  font-size:clamp(2.8rem,5.2vw,5.8rem);
+  line-height:.82;
+  letter-spacing:-.045em;
+  text-transform:uppercase;
+  text-shadow:5px 5px 0 #a94033,0 0 11px rgba(255,226,115,.14);
+}
+.game-only-site .game-lede { color:#c4d4c5; font-size:clamp(.88rem,1.2vw,1.05rem); }
+.game-only-site .game-menu-grid { max-width:1040px; gap:14px; }
+.game-only-site .game-menu-card {
+  min-height:112px;
+  padding:16px 20px;
+  color:#edf2d7;
+  background:linear-gradient(180deg,rgba(13,66,39,.96),rgba(9,47,30,.96));
+  border:2px solid #3d8b4e;
+  border-radius:2px;
+  box-shadow:inset 0 0 0 2px rgba(4,26,17,.75),0 4px 0 #173d2a;
+  font-family:"IBM Plex Mono",monospace;
+}
+.game-only-site .game-menu-card span { color:#87ec8c; font-family:"Pixelify Sans",monospace; font-size:.62rem; }
+.game-only-site .game-menu-card strong { margin:7px 0 4px; color:#fff1b0; font-family:"Pixelify Sans",monospace; font-size:1.12rem; }
+.game-only-site .game-menu-card small { color:#b4c9b7; font-size:.72rem; }
+.game-only-site .game-menu-card:hover,.game-only-site .game-menu-card:focus-visible,.game-only-site .game-menu-card.is-selected {
+  color:#18351e;
+  background:#ffdf6b;
+  border-color:#fff2aa;
+  box-shadow:inset 6px 0 0 #e44d3f,0 5px 0 #8b3c2f;
+  transform:translateY(-2px);
+}
+.game-only-site .game-menu-card:hover strong,.game-only-site .game-menu-card:focus-visible strong,.game-only-site .game-menu-card.is-selected strong { color:#17351e; }
+.game-only-site .game-menu-card:hover span,.game-only-site .game-menu-card:hover small,.game-only-site .game-menu-card:focus-visible span,.game-only-site .game-menu-card:focus-visible small,.game-only-site .game-menu-card.is-selected span,.game-only-site .game-menu-card.is-selected small { color:#6d4931; }
+.game-only-site .game-work-list>div,.game-only-site .speedrun-grid>div,.game-only-site .game-copy-grid p,.game-only-site .game-timeline>div,.game-only-site .contact-save-file {
+  background:rgba(10,52,33,.88);
+  border-color:#347c45;
+  box-shadow:inset 0 0 0 1px rgba(8,28,19,.7);
+}
+.game-only-site .game-work-list strong,.game-only-site .game-timeline strong,.game-only-site .side-quest strong { font-family:"Pixelify Sans",monospace; color:#fff0a9; }
+.game-only-site .game-controls-bar { min-height:51px; font-family:"Pixelify Sans",monospace; }
+.game-only-site .game-controls-bar kbd { color:#17351f; background:#ffda58; border-color:#fff1a2; box-shadow:0 2px 0 #a34433; font-family:"Pixelify Sans",monospace; }
+.game-only-site .mini-dpad button { background:#183b2c; border-color:#5d9a64; color:#d9efca; }
+.game-only-site .mini-ab button { color:#fff5d7; border-color:#6a2824; background:#d54b42; box-shadow:0 3px 0 #7e2b27; }
+.game-only-site .mini-ab button:first-child { background:#2f9c5d; border-color:#1b5738; box-shadow:0 3px 0 #194c33; }
+
+@media (max-width:1050px) {
+  .game-only-site .game-sidebar { grid-template-columns:auto 1fr; gap:14px; }
+  .game-only-site .game-sidebar-meta { display:none; }
+  .game-only-site .game-nav { justify-content:flex-end; overflow-x:auto; }
+  .game-only-site .game-nav button { min-width:max-content; }
+}
+@media (max-width:700px) {
+  .game-only-site .game-rim { padding:5px; }
+  .game-only-site .game-screen { border-width:4px; border-radius:10px; }
+  .game-only-site .game-topbar { min-height:44px; }
+  .game-only-site .game-sidebar { display:block; padding:7px 8px; }
+  .game-only-site .player-chip { display:none; }
+  .game-only-site .game-nav { justify-content:flex-start; }
+  .game-only-site .game-nav button { min-height:32px; padding:0 10px; }
+  .game-only-site .game-page { padding:25px 16px 66px; }
+  .game-only-site .game-page h2 { font-size:clamp(2.5rem,12vw,4rem); }
+  .game-only-site .game-menu-grid,.game-only-site .game-work-list,.game-only-site .game-copy-grid { grid-template-columns:1fr; }
+  .game-only-site .game-menu-card { min-height:88px; }
+}
+@media (prefers-reduced-motion:reduce) {
+  .game-only-site.game-launching .handheld-hero::before { transform:none; filter:none; }
+}
