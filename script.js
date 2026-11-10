@@ -1,17 +1,3 @@
-const root = document.documentElement;
-const themeButton = document.querySelector('[data-theme-toggle]');
-const savedTheme = localStorage.getItem('portfolio-theme');
-
-if (savedTheme === 'night') root.dataset.theme = 'night';
-
-themeButton?.addEventListener('click', () => {
-  const next = root.dataset.theme === 'night' ? 'day' : 'night';
-  if (next === 'night') root.dataset.theme = 'night';
-  else delete root.dataset.theme;
-  localStorage.setItem('portfolio-theme', next);
-  themeButton.setAttribute('aria-label', next === 'night' ? 'Switch to light theme' : 'Switch to dark theme');
-});
-
 const header = document.querySelector('[data-header]');
 const updateHeader = () => header?.classList.toggle('scrolled', window.scrollY > 20);
 updateHeader();
