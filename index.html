@@ -10,10 +10,10 @@
   <meta property="og:type" content="website">
   <title>Ganesh Dhurjati — Software Engineer</title>
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
-  <link rel="stylesheet" href="styles.css?v=20261109-2">
-  <script src="script.js?v=20261109-2" defer></script>
+  <link rel="stylesheet" href="styles.css?v=20261109-3">
+  <script src="script.js?v=20261109-3" defer></script>
 </head>
-<body>
+<body class="game-only-site">
   <a class="skip-link" href="#main">Skip to content</a>
 
   <header class="site-header" data-header>
@@ -22,15 +22,15 @@
       <span>Ganesh Dhurjati</span>
     </a>
     <nav class="desktop-nav" aria-label="Primary navigation">
-      <a href="#about">About</a>
-      <a href="#work">Work</a>
-      <a href="#experience">Experience</a>
+      <a href="#game-portfolio" data-game-start="about">About</a>
+      <a href="#game-portfolio" data-game-start="work">Projects</a>
+      <a href="#game-portfolio" data-game-start="experience">Experience</a>
     </nav>
     <div class="header-actions">
       <button class="icon-button" type="button" data-theme-toggle aria-label="Switch color theme" title="Switch color theme">
         <span aria-hidden="true">◐</span>
       </button>
-      <a class="button button-small" href="#contact">Let's talk</a>
+      <a class="button button-small" href="#game-portfolio" data-game-start="contact">Let's talk</a>
     </div>
   </header>
 
@@ -52,8 +52,8 @@
           <div class="hero-dpad" aria-hidden="true"><span></span></div>
           <div class="select-start"><span>SELECT</span><span>START</span></div>
           <div class="ab-controls">
-            <a class="game-button game-b" href="#work" aria-label="B button: go to selected work">B</a>
-            <a class="game-button game-a" href="#game-portfolio" data-game-start aria-label="A button: enter portfolio game mode">A</a>
+            <a class="game-button game-b" href="#game-portfolio" data-game-start="work" aria-label="B button: open projects">B</a>
+            <a class="game-button game-a" href="#game-portfolio" data-game-start="menu" aria-label="A button: enter portfolio">A</a>
           </div>
         </div>
         <div class="handheld-footer"><span>GANESH DHURJATI</span><span>BUILD · TEST · ITERATE</span></div>
@@ -65,7 +65,7 @@
         <div class="game-screen">
           <header class="game-topbar">
             <div><span class="game-led"></span><strong>GD-OS</strong><span>PORTFOLIO EDITION</span></div>
-            <div class="game-top-actions"><button type="button" data-game-recruiter>R: RECRUITER MODE</button><button type="button" data-game-exit>EXIT ×</button></div>
+            <div class="game-top-actions"><button type="button" data-game-exit>EXIT ×</button></div>
           </header>
 
           <div class="game-layout">
@@ -73,64 +73,48 @@
               <div class="player-chip"><span>GD</span><p>GANESH DHURJATI<small>SOFTWARE ENGINEER</small></p></div>
               <nav class="game-nav">
                 <button type="button" class="is-selected" data-game-nav="menu"><span>00</span>HOME</button>
-                <button type="button" data-game-nav="recruiter"><span>01</span>QUICK SCAN</button>
-                <button type="button" data-game-nav="about"><span>02</span>ABOUT</button>
-                <button type="button" data-game-nav="work"><span>03</span>WORK</button>
-                <button type="button" data-game-nav="experience"><span>04</span>EXPERIENCE</button>
-                <button type="button" data-game-nav="contact"><span>05</span>CONTACT</button>
+                <button type="button" data-game-nav="about"><span>01</span>ABOUT</button>
+                <button type="button" data-game-nav="work"><span>02</span>PROJECTS</button>
+                <button type="button" data-game-nav="experience"><span>03</span>EXPERIENCE</button>
+                <button type="button" data-game-nav="contact"><span>04</span>CONTACT</button>
               </nav>
               <div class="game-sidebar-meta"><span>ATLANTA, GA</span><span>AVAILABLE FOR SWE INTERNSHIPS</span></div>
             </aside>
 
             <div class="game-pages" aria-live="polite">
               <article class="game-page is-active" data-game-page="menu">
-                <p class="game-kicker">PLAYER 01 / SELECT A FILE</p>
-                <h2>What do you want to know?</h2>
-                <p class="game-lede">Use ↑↓ and A, click a file, or press <kbd>R</kbd> for the recruiter speedrun.</p>
+                <p class="game-kicker">GANESH DHURJATI / PORTFOLIO</p>
+                <h2>Pick a section.</h2>
+                <p class="game-lede">Everything is inside this screen. Click a section or use the arrow keys and A.</p>
                 <div class="game-menu-grid">
-                  <button type="button" class="game-menu-card game-menu-featured" data-open-page="recruiter"><span>★ RECOMMENDED</span><strong>30-SECOND RECRUITER MODE</strong><small>The signal, no side quests.</small></button>
-                  <button type="button" class="game-menu-card" data-open-page="work"><span>SELECTED MISSIONS</span><strong>SEE THE WORK</strong><small>Healthcare, robotics, AI, products.</small></button>
-                  <button type="button" class="game-menu-card" data-open-page="experience"><span>PLAYER HISTORY</span><strong>EXPERIENCE LOG</strong><small>Leadership and shipped systems.</small></button>
-                  <button type="button" class="game-menu-card" data-open-page="about"><span>ORIGIN STORY</span><strong>ABOUT GANESH</strong><small>Motivation, interests, and a side quest.</small></button>
+                  <button type="button" class="game-menu-card" data-open-page="about"><span>01</span><strong>ABOUT</strong><small>Who I am and what I care about.</small></button>
+                  <button type="button" class="game-menu-card game-menu-featured" data-open-page="work"><span>02</span><strong>PROJECTS</strong><small>Healthcare, robotics, AI, and full-stack work.</small></button>
+                  <button type="button" class="game-menu-card" data-open-page="experience"><span>03</span><strong>EXPERIENCE</strong><small>Roles, leadership, and engineering impact.</small></button>
+                  <button type="button" class="game-menu-card" data-open-page="contact"><span>04</span><strong>CONTACT</strong><small>LinkedIn, GitHub, and availability.</small></button>
                 </div>
-                <div class="game-system-check"><span>SYSTEM CHECK</span><b>GPA 3.91</b><b>GEORGIA TECH</b><b>GRAD MAY 2028</b><b>10-PERSON TEAM LEAD</b></div>
-              </article>
-
-              <article class="game-page" data-game-page="recruiter">
-                <p class="game-kicker">QUICK SCAN / 30-SECOND BUILD</p>
-                <h2>The recruiter speedrun.</h2>
-                <p class="game-lede">Computer Science at Georgia Tech. I build reliable software across intelligent systems, healthcare technology, robotics, and full-stack products.</p>
-                <div class="speedrun-grid">
-                  <div><span>01 / ENGINEERING</span><strong>Python · Java · JavaScript</strong><p>Backend systems, APIs, data pipelines, responsive interfaces, and production-minded code.</p></div>
-                  <div><span>02 / OWNERSHIP</span><strong>Lead researcher</strong><p>Leading a 10-person software team building and field-testing connected healthcare systems.</p></div>
-                  <div><span>03 / IMPACT</span><strong>Real deployments</strong><p>Work validated in healthcare facilities and optimized across complex robotic systems.</p></div>
-                  <div><span>04 / BUILDER</span><strong>Technical + product</strong><p>Co-founded an AI platform serving three paying clients and generating about $3K MRR.</p></div>
-                </div>
-                <div class="game-cta-row"><button type="button" data-open-page="work">VIEW PROOF →</button><a href="https://www.linkedin.com/in/ganeshdhurjati/" target="_blank" rel="noopener">LINKEDIN ↗</a><a href="https://github.com/GANESHDHURJATI" target="_blank" rel="noopener">GITHUB ↗</a></div>
               </article>
 
               <article class="game-page" data-game-page="about">
-                <p class="game-kicker">PLAYER PROFILE / ABOUT</p>
-                <h2>Engineering with a reason.</h2>
+                <p class="game-kicker">01 / ABOUT</p>
+                <h2>Hi, I’m Ganesh.</h2>
                 <div class="game-copy-grid"><p>I’m Ganesh, a Georgia Tech Computer Science student concentrating in Artificial Intelligence and People. I’m drawn to software that has to perform beyond a demo—supporting healthcare teams, interpreting real-world data, or helping an intelligent system make a better decision.</p><p>I enjoy working across the stack, from algorithms and backend architecture to interfaces and deployment. Long term, I want to combine engineering judgment with business insight to build meaningful technology companies.</p></div>
-                <div class="side-quest"><span>SIDE QUEST UNLOCKED</span><strong>Violin + guitar</strong><p>Music keeps me patient, disciplined, and extremely aware when one tiny detail is off.</p></div>
+                <div class="side-quest"><span>WHEN I’M NOT CODING</span><strong>Piano</strong><p>I can debug software for hours, but a metronome can humble me in under eight seconds.</p></div>
               </article>
 
               <article class="game-page" data-game-page="work">
-                <p class="game-kicker">MISSION SELECT / PROJECTS</p>
-                <h2>Built for the world beyond the screen.</h2>
+                <p class="game-kicker">02 / PROJECTS</p>
+                <h2>Selected work.</h2>
                 <div class="game-work-list">
                   <div><span>01 / HEALTHCARE</span><strong>IoT in Health</strong><p>Connected systems for fall detection, environmental safety, and point-of-care use—field-tested in real healthcare settings.</p><small>PYTHON · IOT · DATA · LEADERSHIP</small></div>
                   <div><span>02 / ROBOTICS</span><strong>Humanoid Robotics Platform</strong><p>Integrated perception, data processing, autonomy, and conversational features across a complex hardware-software platform.</p><small>PYTHON · AI/ML · SYSTEMS</small></div>
                   <div><span>03 / PRODUCT</span><strong>Scribur</strong><p>An AI-powered operations platform with three paying clients and approximately $3K in monthly recurring revenue.</p><small>APIS · DATABASES · FULL-STACK</small></div>
                   <div><span>04 / HACKATL</span><strong>ChromatoSense</strong><p>AI-assisted HPLC troubleshooting that flags suspicious laboratory runs and produces evidence-backed explanations.</p><small>FASTAPI · OPENCV · OPENAI API</small></div>
                 </div>
-                <div class="game-cta-row"><a href="#work" data-game-full-site>OPEN FULL PROJECT DETAILS ↓</a></div>
               </article>
 
               <article class="game-page" data-game-page="experience">
-                <p class="game-kicker">PLAYER HISTORY / EXPERIENCE</p>
-                <h2>Ownership at every level.</h2>
+                <p class="game-kicker">03 / EXPERIENCE</p>
+                <h2>Where I’ve worked.</h2>
                 <div class="game-timeline">
                   <div><time>2026 — NOW</time><strong>Undergraduate Lead Researcher</strong><span>Georgia Institute of Technology</span><p>Leading software development for connected healthcare systems and coordinating a 10-person engineering team.</p></div>
                   <div><time>2024 — 2025</time><strong>Software Engineer Intern</strong><span>System Technology Works LLC</span><p>Developed and optimized Python software across intelligent robotics, real-time data processing, and AI-powered features.</p></div>
@@ -139,22 +123,21 @@
               </article>
 
               <article class="game-page" data-game-page="contact">
-                <p class="game-kicker">NEXT MISSION / CONTACT</p>
-                <h2>Want Player 01 on your team?</h2>
+                <p class="game-kicker">04 / CONTACT</p>
+                <h2>Let’s talk.</h2>
                 <p class="game-lede">I’m interested in software engineering opportunities across intelligent systems, healthcare technology, robotics, data, and full-stack products.</p>
                 <div class="contact-save-file"><span>STATUS</span><strong>OPEN TO OPPORTUNITIES</strong><span>LOCATION</span><strong>ATLANTA, GA</strong><span>RESPONSE PATH</span><strong>LINKEDIN</strong></div>
                 <div class="game-cta-row game-contact-actions"><a href="https://www.linkedin.com/in/ganeshdhurjati/" target="_blank" rel="noopener">START A CONVERSATION ↗</a><a href="https://github.com/GANESHDHURJATI" target="_blank" rel="noopener">EXPLORE GITHUB ↗</a></div>
-                <p class="contact-joke">No escort mission required. Clear requirements are appreciated.</p>
+                <p class="contact-joke">Available for software engineering internships. Boss battles optional.</p>
               </article>
             </div>
           </div>
 
           <footer class="game-controls-bar">
             <div class="mini-dpad"><button type="button" data-game-up aria-label="Previous menu item">↑</button><button type="button" data-game-down aria-label="Next menu item">↓</button></div>
-            <p><kbd>↑↓</kbd> SELECT <kbd>A / ENTER</kbd> OPEN <kbd>B / ESC</kbd> BACK <kbd>R</kbd> QUICK SCAN</p>
+            <p><kbd>↑↓</kbd> SELECT <kbd>A / ENTER</kbd> OPEN <kbd>B / ESC</kbd> BACK</p>
             <div class="mini-ab"><button type="button" data-game-back aria-label="Go back">B</button><button type="button" data-game-choose aria-label="Choose selected item">A</button></div>
           </footer>
-          <div class="achievement-toast" role="status" aria-live="polite"><span>ACHIEVEMENT UNLOCKED</span><strong>RECRUITER SPEEDRUN</strong><small>30 seconds. Zero unnecessary lore.</small></div>
         </div>
       </div>
     </section>
@@ -179,7 +162,7 @@
           <div class="story-grid">
             <article><span>01 / THE WORK</span><h3>Systems, end to end.</h3><p>My interests span algorithms, intelligent systems, robotics, automation, backend architecture, and full-stack development. I like understanding the whole system—from data and models to interfaces and deployment—and I care about writing robust software rather than stopping at a proof of concept.</p></article>
             <article><span>02 / THE WHY</span><h3>Technology with leverage.</h3><p>Working on humanoid robotics and deploying connected-health systems in clinical environments made the value of reliable engineering tangible to me. Long term, I want to combine engineering judgment with business and financial insight to build and grow technology companies, especially in healthcare and automation.</p></article>
-            <article><span>03 / BEYOND CODE</span><h3>Rhythm, patience, detail.</h3><p>Outside engineering, I’m a sports fan and a musician who plays violin and guitar. Music has trained the same habits I bring to technical work: listen closely, practice deliberately, stay patient when progress is uneven, and notice the small details that change the entire result.</p></article>
+            <article><span>03 / BEYOND CODE</span><h3>Rhythm, patience, detail.</h3><p>Outside engineering, I’m a sports fan and a pianist. Music has trained the same habits I bring to technical work: listen closely, practice deliberately, stay patient when progress is uneven, and notice the small details that change the entire result.</p></article>
           </div>
           <div class="about-links"><a href="#work">See what I've built ↓</a><a href="https://www.linkedin.com/in/ganeshdhurjati/" target="_blank" rel="noopener">LinkedIn ↗</a><a href="https://github.com/GANESHDHURJATI" target="_blank" rel="noopener">GitHub ↗</a></div>
         </div>
