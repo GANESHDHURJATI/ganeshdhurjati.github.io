@@ -405,3 +405,135 @@ body.game-only-site { background:#071a16; }
 .game-only-site .game-rim { height:min(860px,calc(100svh - 68px)); }
 @media(max-width:850px){.game-only-site .game-rim{height:100svh}.game-only-site .handheld-hero::before{background-position:52% center}.serene-scene{background-position:54% center}}
 
+/* Original platform-adventure world */
+body.game-only-site { background:#238fd1; }
+.game-only-site .site-header {
+  background:linear-gradient(180deg,rgba(13,47,76,.92),rgba(13,47,76,.7));
+  border-bottom:1px solid rgba(255,245,205,.45);
+  box-shadow:0 5px 18px rgba(17,70,105,.14);
+  backdrop-filter:blur(10px) saturate(1.15);
+}
+.game-only-site .brand,.game-only-site .desktop-nav a { color:#fff9df; text-shadow:0 2px 0 rgba(8,45,73,.42); }
+.game-only-site .brand-mark { color:#fff5c4; background:#208c4c; border-color:#ffe074; box-shadow:3px 3px 0 #7e3d25; }
+.game-only-site .button-small { color:#4a271c; background:#ffd358; border-color:#fff0a8; box-shadow:3px 3px 0 #9f4a2d; }
+.game-only-site .handheld-hero::before {
+  background-image:linear-gradient(180deg,rgba(20,139,215,.02),rgba(36,122,78,.07)),url("assets/platformer-world-v1.webp");
+  background-position:center;
+  background-size:cover;
+  filter:saturate(1.02) contrast(1.01);
+}
+.game-only-site .handheld-hero::after {
+  color:#fff7d4;
+  background:rgba(14,68,54,.68);
+  border-color:rgba(255,224,116,.62);
+  box-shadow:0 3px 0 rgba(92,48,31,.4);
+}
+.forest-backdrop { display:none; }
+
+.game-only-site .handheld {
+  background:linear-gradient(145deg,#fff0cf 0,#e8d3aa 46%,#c59b72 100%);
+  border:2px solid #8b634c;
+  box-shadow:0 38px 48px rgba(50,74,60,.34),0 8px 0 #8e624b,12px 16px 0 #75432f,inset 8px 8px 9px rgba(255,255,255,.72),inset -11px -12px 15px rgba(104,62,38,.18);
+}
+.game-only-site .handheld::before { background:linear-gradient(90deg,transparent,rgba(255,255,255,.85),transparent); }
+.game-only-site .handheld::after { background:repeating-linear-gradient(90deg,#865542 0 4px,transparent 4px 10px); }
+.game-only-site .handheld-topline,.game-only-site .handheld-footer { color:#714832; text-shadow:0 1px rgba(255,255,255,.72); }
+.game-only-site .handheld-screen {
+  background:#071a20;
+  border-color:#26373a;
+  border-top-color:#40565a;
+  border-left-color:#394d50;
+  box-shadow:0 8px 12px rgba(62,38,25,.35),inset 0 0 0 3px #020708,inset 0 0 72px rgba(45,188,111,.14),inset 0 -18px 28px rgba(0,0,0,.5);
+}
+.game-only-site .screen-status,.boot-terminal { color:#75e09b; }
+.game-only-site .boot-label { color:#ffd65d; }
+.game-only-site .boot-copy h1 { font-family:"Arial Rounded MT Bold","Arial Black","Trebuchet MS",sans-serif; filter:drop-shadow(0 8px 7px rgba(0,0,0,.34)); }
+.retro-word { color:#ffe173; text-shadow:6px 6px 0 #b4472f,-2px -1px 0 #fff8c8; }
+.phosphor-word { color:#f4f0ce; text-shadow:6px 6px 0 #21844f,-2px -1px 0 #ffffff; }
+.retro-word::before,.phosphor-word::before { color:#38b9db; }
+.retro-word::after,.phosphor-word::after { color:#e44d3f; }
+.game-only-site .boot-copy p { color:#b9d9d6; }
+.game-only-site .screen-prompt { color:#ffe16a; border-color:#e1ad3c; background:rgba(117,76,15,.22); box-shadow:0 0 13px rgba(255,216,82,.13),inset 0 0 10px rgba(255,220,95,.08); }
+.boot-meter { border-color:rgba(255,213,83,.78); }.boot-meter i { background:#ffd553; box-shadow:0 0 8px rgba(255,213,83,.5); }
+.game-only-site .game-button { border-color:#652e25; background:radial-gradient(circle at 35% 30%,#ff806d,#d73f35 72%); box-shadow:0 7px 0 #8d3028,0 10px 12px rgba(60,30,20,.28),inset 2px 3px 3px rgba(255,255,255,.38); }
+.game-only-site .game-b { border-color:#245846; background:radial-gradient(circle at 35% 30%,#62d58f,#218a53 72%); box-shadow:0 7px 0 #17613b,0 10px 12px rgba(60,30,20,.28),inset 2px 3px 3px rgba(255,255,255,.3); }
+.game-only-site .select-start span::before { background:linear-gradient(#9b7e70,#61493f); border-color:#4b342d; }
+
+.game-only-site .game-shell {
+  background-color:#218ccf;
+  background-image:linear-gradient(180deg,rgba(18,133,207,.03),rgba(30,105,69,.12)),url("assets/platformer-world-v1.webp");
+  background-position:center;
+  background-size:cover;
+}
+.serene-scene {
+  background-image:linear-gradient(180deg,rgba(18,134,207,.06),rgba(10,72,52,.2)),url("assets/platformer-world-v1.webp");
+  background-position:center;
+  background-size:cover;
+  filter:saturate(.94) brightness(.78);
+  transform:scale(1.02);
+}
+.serene-scene::after { background:radial-gradient(ellipse at center,transparent 26%,rgba(8,49,45,.2) 84%,rgba(5,31,31,.4)); }
+.scene-moon,.scene-peak,.scene-woods,.scene-mist,.scene-light { display:none; }
+.game-only-site .game-rim {
+  background:linear-gradient(145deg,#ffedc4,#d5b28a 52%,#b77b5a);
+  border:2px solid #8e5e46;
+  box-shadow:0 30px 60px rgba(24,69,56,.46),0 9px 0 #8c5b46,12px 15px 0 #6e3d2e,inset 8px 8px 10px rgba(255,255,255,.58),inset -9px -10px 13px rgba(103,55,35,.18);
+}
+.game-only-site .game-screen {
+  color:#eaf4dc;
+  background:#071b19;
+  border-color:#2c403c;
+  border-top-color:#49625b;
+  border-left-color:#405851;
+  box-shadow:0 7px 14px rgba(0,0,0,.45),inset 0 0 0 2px #010706,inset 0 0 75px rgba(58,190,105,.1);
+}
+.game-only-site .game-topbar,.game-only-site .game-controls-bar,.game-only-site .game-sidebar { background:rgba(5,25,22,.95); border-color:rgba(113,211,133,.27); }
+.game-only-site .game-topbar strong,.game-only-site .game-kicker,.game-only-site .game-sidebar-meta span:last-child,.game-only-site .game-work-list span,.game-only-site .game-timeline time,.game-only-site .contact-save-file span { color:#ffd45b; text-shadow:0 0 7px rgba(255,212,91,.24); }
+.game-only-site .game-page h2 { color:#fff0a9; text-shadow:4px 4px 0 #a83f30,0 0 10px rgba(255,224,112,.15); }
+.game-only-site .game-menu-card,.game-only-site .game-work-list>div { color:#e8f2dd; background:rgba(14,57,37,.86); border-color:rgba(111,203,113,.32); box-shadow:inset 0 3px 0 rgba(88,183,85,.12); }
+.game-only-site .game-menu-card:hover,.game-only-site .game-menu-card:focus-visible,.game-only-site .game-menu-card.is-selected { color:#17351f; background:#ffdf6b; border-color:#fff1ae; box-shadow:inset 5px 0 0 #e74d3e,0 0 18px rgba(255,223,107,.18); }
+.game-only-site .game-nav button:hover,.game-only-site .game-nav button:focus-visible,.game-only-site .game-nav button.is-selected { color:#17351f; background:#8ed46d; border-color:#dff3a3; }
+.game-only-site .game-nav button.is-selected span { color:#9b3c2e; }
+.game-only-site .game-lede,.game-only-site .game-copy-grid p,.game-only-site .game-work-list p,.game-only-site .game-timeline p { color:#b9cdbf; }
+
+@media(max-width:850px){.game-only-site .handheld-hero::before,.serene-scene,.game-only-site .game-shell{background-position:center}.game-only-site .game-rim{height:100svh}}
+@media(max-width:620px){.game-only-site .site-header{background:rgba(13,47,76,.94)}.game-only-site .handheld{box-shadow:0 24px 32px rgba(39,77,61,.34),0 6px 0 #8e624b,7px 10px 0 #75432f,inset 5px 5px 7px rgba(255,255,255,.58)}}
+
+/* Approved hero mockup — preserve its composition exactly */
+.game-only-site .site-header { display:none; }
+.game-only-site .handheld-hero { width:100%; max-width:none; padding:0; background:#2498e5; cursor:default; }
+.game-only-site .handheld-hero::before {
+  z-index:-1;
+  inset:0;
+  opacity:1;
+  background-color:#2498e5;
+  background-image:url("assets/platformer-hero-v1.webp");
+  background-position:center;
+  background-repeat:no-repeat;
+  background-size:cover;
+  filter:none;
+  transition:transform .58s cubic-bezier(.2,.78,.22,1),filter .58s ease;
+}
+.game-only-site .handheld-hero::after { display:none; }
+.game-only-site .handheld-hero > .handheld { opacity:0; pointer-events:none; }
+.game-only-site .handheld-hero:has(.handheld.is-launching)::before { transform:scale(1.72); filter:brightness(.72) blur(1px); }
+.hero-launch-hit,.hero-a-hit {
+  position:absolute;
+  z-index:5;
+  display:block;
+  overflow:hidden;
+  color:transparent;
+  background:transparent;
+  text-indent:-9999px;
+  border:0;
+  border-radius:12px;
+  cursor:pointer;
+}
+.hero-launch-hit { left:50%; top:51.5%; width:min(20vw,340px); height:min(6vw,68px); transform:translate(-50%,-50%); }
+.hero-a-hit { left:64.7%; top:68.7%; width:min(7vw,118px); height:min(7vw,118px); transform:translate(-50%,-50%); border-radius:50%; }
+.hero-launch-hit:focus-visible,.hero-a-hit:focus-visible { outline:4px solid #fff8a8; outline-offset:5px; box-shadow:0 0 0 8px rgba(17,66,52,.45); }
+@media (max-aspect-ratio:4/3) {
+  .game-only-site .handheld-hero::before { background-size:contain; }
+  .hero-launch-hit { top:calc(50% + .85vw); width:20vw; height:4.5vw; }
+  .hero-a-hit { left:64.7%; top:calc(50% + 10.5vw); width:7.5vw; height:7.5vw; }
+}
