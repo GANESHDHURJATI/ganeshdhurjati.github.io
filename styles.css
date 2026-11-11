@@ -946,3 +946,140 @@ body.game-only-site { background:#238ed0; }
   .game-only-site .game-shell { padding:10px 6px; }
   .game-only-site .game-rim { width:98vw; height:94dvh; border-radius:24px 24px 48px 24px; }
 }
+
+/* Rendered 3D shell with a live HTML screen behind its transparent window */
+.game-only-site .handheld-hero > .handheld {
+  width:min(760px,92vw,calc(100dvh - 72px));
+  height:auto;
+  aspect-ratio:1/1;
+  display:block;
+  padding:0;
+  overflow:visible;
+  background:none;
+  border:0;
+  border-radius:0;
+  box-shadow:none;
+  filter:drop-shadow(0 30px 24px rgba(32,66,50,.32)) drop-shadow(8px 12px 5px rgba(82,44,31,.2));
+  transform:perspective(1500px) rotateX(1.2deg) rotateY(-.35deg);
+}
+.game-only-site .handheld-hero > .handheld::before { display:none; }
+.game-only-site .handheld-hero > .handheld::after {
+  content:"";
+  position:absolute;
+  z-index:10;
+  inset:0;
+  width:auto;
+  height:auto;
+  opacity:1;
+  transform:none;
+  background:url("assets/handheld-shell-3d-v2.webp") center/100% 100% no-repeat;
+  border-radius:0;
+  pointer-events:none;
+}
+.game-only-site .handheld-hero > .handheld.is-launching {
+  transform:perspective(1500px) translateY(4vh) scale(1.35);
+  opacity:0;
+  filter:drop-shadow(0 36px 28px rgba(20,48,37,.25)) blur(1.5px) brightness(.82);
+}
+.game-only-site .handheld-topline,.game-only-site .handheld-controls,.game-only-site .handheld-footer { display:none; }
+.game-only-site .handheld-screen {
+  position:absolute;
+  z-index:2;
+  left:15.55%;
+  top:13.32%;
+  width:68.58%;
+  height:43.62%;
+  min-height:0;
+  padding:clamp(12px,1.6vw,25px);
+  overflow:hidden;
+  background:radial-gradient(circle at 50% 22%,rgba(58,126,78,.15),transparent 42%),#061a15;
+  border:0;
+  border-radius:clamp(22px,3vw,48px);
+  box-shadow:inset 0 0 64px rgba(98,218,112,.12);
+}
+.game-only-site .handheld-screen::before { opacity:.2; }
+.game-only-site .boot-copy { padding-top:2%; }
+.game-only-site .boot-copy h1 { font-size:clamp(3rem,5.2vw,4.7rem); line-height:.72; }
+.game-only-site .boot-label { margin:5px 0 10px; font-size:clamp(.62rem,.8vw,.76rem); }
+.game-only-site .boot-terminal { width:min(90%,520px); margin-bottom:11px; font-size:clamp(.49rem,.68vw,.65rem); }
+.game-only-site .screen-prompt { padding:8px 18px; font-size:clamp(.62rem,.75vw,.78rem); }
+.game-only-site .screen-pixels i { z-index:1; }
+
+/* Reuse the exact same rendered hardware after A; only the transparent screen changes. */
+.game-only-site .game-rim {
+  width:min(960px,94vw,112dvh);
+  height:auto;
+  aspect-ratio:1/1;
+  padding:0;
+  overflow:visible;
+  background:none;
+  border:0;
+  border-radius:0;
+  box-shadow:none;
+  filter:drop-shadow(0 34px 28px rgba(19,50,37,.4)) drop-shadow(10px 14px 6px rgba(79,42,30,.22));
+  opacity:0;
+  transform:scale(.72);
+  transform-origin:50% 42%;
+}
+.game-only-site .game-shell.is-open .game-rim { opacity:1; transform:scale(1); }
+.game-only-site .game-rim::before { display:none; }
+.game-only-site .game-rim::after {
+  content:"";
+  position:absolute;
+  z-index:10;
+  inset:0;
+  width:auto;
+  height:auto;
+  opacity:1;
+  transform:none;
+  background:url("assets/handheld-shell-3d-v2.webp") center/100% 100% no-repeat;
+  filter:none;
+  pointer-events:none;
+}
+.game-only-site .game-rim .game-screen {
+  position:absolute;
+  z-index:2;
+  left:15.55%;
+  top:13.32%;
+  width:68.58%;
+  height:43.62%;
+  min-height:0;
+  overflow:hidden;
+  background:radial-gradient(circle at 50% 16%,rgba(52,126,85,.14),transparent 38%),#061a15;
+  border:0;
+  border-radius:clamp(28px,3.4vw,52px);
+  box-shadow:inset 0 0 72px rgba(80,191,108,.12);
+}
+.game-only-site .game-rim .game-topbar { min-height:38px; padding:6px 12px; font-size:.51rem; }
+.game-only-site .game-rim .game-top-actions button { padding:6px 8px; font-size:.48rem; }
+.game-only-site .game-rim .game-layout { grid-template-rows:42px minmax(0,1fr); }
+.game-only-site .game-rim .game-sidebar { display:block; padding:4px 8px; }
+.game-only-site .game-rim .player-chip,.game-only-site .game-rim .game-sidebar-meta { display:none; }
+.game-only-site .game-rim .game-nav { justify-content:center; gap:3px; overflow-x:auto; }
+.game-only-site .game-rim .game-nav button { min-height:31px; padding:0 9px; font-size:.57rem; }
+.game-only-site .game-rim .game-page { width:100%; padding:18px 24px 42px; }
+.game-only-site .game-rim .game-kicker { margin-bottom:8px; font-size:.55rem; }
+.game-only-site .game-rim .game-page h2 { margin-bottom:8px; font-size:clamp(2.25rem,3.4vw,3.65rem); line-height:.82; text-shadow:4px 4px 0 #a94033; }
+.game-only-site .game-rim .game-lede { margin-bottom:15px; font-size:.72rem; line-height:1.4; }
+.game-only-site .game-rim .game-menu-grid { gap:8px; }
+.game-only-site .game-rim .game-menu-card { min-height:67px; padding:8px 11px; border-width:1px; box-shadow:inset 0 0 0 1px rgba(4,26,17,.7),0 3px 0 #173d2a; }
+.game-only-site .game-rim .game-menu-card span { font-size:.45rem; }
+.game-only-site .game-rim .game-menu-card strong { margin:4px 0 2px; font-size:.84rem; }
+.game-only-site .game-rim .game-menu-card small { font-size:.58rem; }
+.game-only-site .game-rim .game-controls-bar { min-height:39px; padding:5px 10px; font-size:.46rem; }
+.game-only-site .game-rim .mini-dpad button,.game-only-site .game-rim .mini-ab button { width:28px; height:28px; font-size:.55rem; }
+.game-only-site .game-rim .game-work-list,.game-only-site .game-rim .game-copy-grid,.game-only-site .game-rim .speedrun-grid { gap:8px; }
+.game-only-site .game-rim .game-work-list>div,.game-only-site .game-rim .speedrun-grid>div { padding:11px; }
+.game-only-site .game-rim .game-work-list strong { margin:5px 0 4px; font-size:.82rem; }
+.game-only-site .game-rim .game-work-list p,.game-only-site .game-rim .game-copy-grid p,.game-only-site .game-rim .game-timeline p { font-size:.62rem; line-height:1.38; }
+.game-only-site .game-rim .game-timeline>div { padding:10px 0; }
+
+@media (max-width:700px) {
+  .game-only-site .handheld-hero > .handheld { width:min(96vw,calc(100dvh - 58px)); }
+  .game-only-site .handheld-screen { border-radius:24px; }
+  .game-only-site .boot-copy h1 { font-size:clamp(2.25rem,10vw,3.3rem); }
+  .game-only-site .boot-terminal { font-size:.42rem; }
+  .game-only-site .game-rim { width:min(110vw,108dvh); }
+  .game-only-site .game-rim .game-screen { border-radius:25px; }
+  .game-only-site .game-rim .game-nav button { padding:0 7px; }
+}
