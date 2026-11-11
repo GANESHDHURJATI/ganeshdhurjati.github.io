@@ -45,9 +45,9 @@ const selectGameChoice = (index, focus = false) => {
   const choices = getGameChoices();
   if (!choices.length) return;
   selectedGameIndex = (index + choices.length) % choices.length;
-  document.querySelectorAll('.game-menu-card.is-selected').forEach((item) => item.classList.remove('is-selected'));
+  document.querySelectorAll('.game-menu-card.is-selected, .console-title-card.is-selected').forEach((item) => item.classList.remove('is-selected'));
   const selected = choices[selectedGameIndex];
-  if (selected.classList.contains('game-menu-card')) selected.classList.add('is-selected');
+  if (selected.matches('.game-menu-card, .console-title-card')) selected.classList.add('is-selected');
   if (focus) selected.focus({ preventScroll: true });
 };
 

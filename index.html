@@ -15,8 +15,8 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600;700&family=Pixelify+Sans:wght@500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css?v=20261110-10">
-  <script src="script.js?v=20261110-10" defer></script>
+  <link rel="stylesheet" href="styles.css?v=20261110-11">
+  <script src="script.js?v=20261110-11" defer></script>
 </head>
 <body class="game-only-site">
   <a class="skip-link" href="#main">Skip to content</a>
@@ -99,15 +99,32 @@
 
             <div class="game-pages" aria-live="polite">
               <article class="game-page is-active" data-game-page="menu">
-                <p class="game-kicker">GANESH_D / PORTFOLIO_OS</p>
-                <h2>SELECT A FILE.</h2>
-                <p class="game-lede">Choose with the D-pad or click a section. Press A to open.</p>
-                <div class="game-menu-grid">
-                  <button type="button" class="game-menu-card" data-open-page="about"><span>01</span><strong>ABOUT</strong><small>Who I am and what I care about.</small></button>
-                  <button type="button" class="game-menu-card game-menu-featured" data-open-page="work"><span>02</span><strong>PROJECTS</strong><small>Healthcare, robotics, AI, and full-stack work.</small></button>
-                  <button type="button" class="game-menu-card" data-open-page="experience"><span>03</span><strong>EXPERIENCE</strong><small>Roles, leadership, and engineering impact.</small></button>
-                  <button type="button" class="game-menu-card" data-open-page="contact"><span>04</span><strong>CONTACT</strong><small>LinkedIn, GitHub, and availability.</small></button>
+                <div class="console-home-head">
+                  <div class="console-player"><span>GD</span><p><strong>Ganesh Dhurjati</strong><small>Software Engineer · Online</small></p></div>
+                  <div class="console-status"><span>PORTFOLIO LIBRARY</span><b>4 TITLES</b></div>
                 </div>
+                <p class="game-kicker">GANESH_D / PORTFOLIO_CONSOLE</p>
+                <h2>Choose a title.</h2>
+                <p class="game-lede">Each title opens a different part of my portfolio. Click one, or use the arrow keys and A.</p>
+                <div class="console-library" aria-label="Portfolio titles">
+                  <button type="button" class="console-title-card is-selected" data-open-page="about">
+                    <span class="console-cover cover-about" aria-hidden="true"><i class="cover-orbit"></i><b>GD</b><em>PLAYER<br>PROFILE</em></span>
+                    <strong>About Me</strong><small>Player profile</small>
+                  </button>
+                  <button type="button" class="console-title-card" data-open-page="work">
+                    <span class="console-cover cover-projects" aria-hidden="true"><i class="cover-grid"></i><b>&lt;/&gt;</b><em>BUILD<br>ARCHIVE</em></span>
+                    <strong>Projects</strong><small>Selected builds</small>
+                  </button>
+                  <button type="button" class="console-title-card" data-open-page="experience">
+                    <span class="console-cover cover-experience" aria-hidden="true"><i class="cover-route"></i><b>XP</b><em>CAREER<br>MODE</em></span>
+                    <strong>Experience</strong><small>Career timeline</small>
+                  </button>
+                  <button type="button" class="console-title-card" data-open-page="contact">
+                    <span class="console-cover cover-contact" aria-hidden="true"><i class="cover-signal"></i><b>@</b><em>PLAYER<br>CONNECT</em></span>
+                    <strong>Contact</strong><small>Start a conversation</small>
+                  </button>
+                </div>
+                <div class="console-tip"><span>NOW PLAYING</span><strong>Ganesh Dhurjati’s Portfolio</strong><small>Available for software engineering internships</small></div>
               </article>
 
               <article class="game-page" data-game-page="about">
