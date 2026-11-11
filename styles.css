@@ -1083,3 +1083,140 @@ body.game-only-site { background:#238ed0; }
   .game-only-site .game-rim .game-screen { border-radius:25px; }
   .game-only-site .game-rim .game-nav button { padding:0 7px; }
 }
+
+/* Screen-dive portfolio mode: the physical A button enters a full, readable interface. */
+.game-only-site .hero-a-hit {
+  position:absolute;
+  z-index:20;
+  left:72.5%;
+  top:61.6%;
+  width:13.5%;
+  aspect-ratio:1;
+  display:block;
+  border-radius:50%;
+  cursor:pointer;
+  color:transparent;
+  background:rgba(255,255,255,.001);
+  border:0;
+  appearance:none;
+  pointer-events:auto !important;
+  transform:none !important;
+  -webkit-tap-highlight-color:transparent;
+}
+.game-only-site .handheld-hero > .handheld::after { display:block; }
+.game-only-site .hero-a-hit span { position:absolute; width:1px; height:1px; overflow:hidden; clip:rect(0 0 0 0); }
+.game-only-site .hero-a-hit:hover { box-shadow:0 0 0 5px rgba(255,239,151,.32),0 0 32px rgba(255,218,75,.5); }
+.game-only-site .hero-a-hit:active { transform:translateY(3px) scale(.97); }
+.game-only-site .hero-a-hit:focus-visible { outline:4px solid #fff0a3; outline-offset:5px; }
+.game-only-site .screen-prompt { position:relative; z-index:20; }
+
+.game-only-site .handheld-hero > .handheld.is-launching {
+  transform:perspective(1500px) translateY(10vh) scale(4.1);
+  transform-origin:50% 35%;
+  opacity:1;
+  filter:brightness(.42) blur(2px);
+  transition:transform .76s cubic-bezier(.2,.78,.12,1),filter .62s ease;
+}
+
+.game-only-site .game-shell {
+  padding:clamp(10px,1.6vw,24px);
+  background:
+    radial-gradient(circle at 50% 18%,rgba(76,182,113,.13),transparent 36%),
+    linear-gradient(rgba(3,19,13,.94),rgba(3,15,11,.97));
+  backdrop-filter:none;
+}
+.game-only-site .game-shell::before {
+  z-index:3;
+  opacity:.12;
+  background:repeating-linear-gradient(to bottom,transparent 0 4px,rgba(158,255,181,.12) 5px);
+}
+.game-only-site .serene-scene { display:none; }
+.game-only-site .game-rim {
+  width:min(1500px,calc(100vw - 28px));
+  height:min(920px,calc(100dvh - 28px));
+  aspect-ratio:auto;
+  padding:0;
+  overflow:hidden;
+  background:#061a14;
+  border:1px solid rgba(169,232,143,.42);
+  border-radius:22px;
+  box-shadow:0 30px 90px rgba(0,0,0,.55),0 0 0 7px rgba(88,135,91,.09),inset 0 0 80px rgba(99,205,124,.06);
+  filter:none;
+  opacity:0;
+  transform:scale(.86);
+  transform-origin:50% 42%;
+  transition:transform .45s cubic-bezier(.18,.84,.2,1),opacity .26s ease;
+}
+.game-only-site .game-shell.is-open .game-rim { opacity:1; transform:scale(1); }
+.game-only-site .game-rim::before,.game-only-site .game-rim::after { display:none; }
+.game-only-site .game-rim .game-screen {
+  position:relative;
+  inset:auto;
+  width:100%;
+  height:100%;
+  display:grid;
+  grid-template-rows:64px minmax(0,1fr) 58px;
+  overflow:hidden;
+  background:radial-gradient(circle at 60% 0,rgba(66,142,91,.1),transparent 40%),#061a14;
+  border:0;
+  border-radius:inherit;
+  box-shadow:none;
+}
+.game-only-site .game-rim .game-topbar {
+  min-height:64px;
+  padding:0 24px;
+  font-size:.65rem;
+  background:rgba(4,20,14,.96);
+  border-bottom:1px solid rgba(169,232,143,.25);
+}
+.game-only-site .game-rim .game-top-actions button { min-height:36px; padding:0 13px; font-size:.56rem; }
+.game-only-site .game-rim .game-layout { min-height:0; display:grid; grid-template-columns:230px minmax(0,1fr); grid-template-rows:1fr; }
+.game-only-site .game-rim .game-sidebar {
+  display:flex;
+  padding:24px 16px 18px;
+  background:rgba(4,18,12,.92);
+  border-right:1px solid rgba(169,232,143,.22);
+}
+.game-only-site .game-rim .player-chip { display:flex; }
+.game-only-site .game-rim .game-sidebar-meta { display:grid; }
+.game-only-site .game-rim .game-nav { display:grid; justify-content:stretch; gap:7px; margin-top:22px; overflow:visible; }
+.game-only-site .game-rim .game-nav button { width:100%; min-height:46px; padding:0 13px; font-size:.68rem; }
+.game-only-site .game-rim .game-pages { overflow:auto; }
+.game-only-site .game-rim .game-page { width:100%; min-height:100%; padding:clamp(34px,5vw,74px); }
+.game-only-site .game-rim .game-kicker { margin-bottom:15px; font-size:.64rem; }
+.game-only-site .game-rim .game-page h2 { margin-bottom:16px; font-size:clamp(3.1rem,5.4vw,6.3rem); line-height:.88; text-shadow:5px 5px 0 #a94033; }
+.game-only-site .game-rim .game-lede { max-width:850px; margin-bottom:28px; font-size:clamp(.95rem,1.3vw,1.18rem); line-height:1.55; }
+.game-only-site .game-rim .game-menu-grid { max-width:1040px; gap:14px; }
+.game-only-site .game-rim .game-menu-card { min-height:120px; padding:18px 20px; border-width:1px; }
+.game-only-site .game-rim .game-menu-card span { font-size:.54rem; }
+.game-only-site .game-rim .game-menu-card strong { margin:9px 0 6px; font-size:1.05rem; }
+.game-only-site .game-rim .game-menu-card small { font-size:.78rem; }
+.game-only-site .game-rim .game-controls-bar { min-height:58px; padding:8px 18px; font-size:.52rem; }
+.game-only-site .game-rim .mini-dpad button,.game-only-site .game-rim .mini-ab button { width:36px; height:36px; font-size:.68rem; }
+.game-only-site .game-rim .game-work-list,.game-only-site .game-rim .game-copy-grid,.game-only-site .game-rim .speedrun-grid { max-width:1080px; gap:14px; }
+.game-only-site .game-rim .game-work-list>div,.game-only-site .game-rim .speedrun-grid>div { padding:20px; }
+.game-only-site .game-rim .game-work-list strong { margin:10px 0 7px; font-size:1.05rem; }
+.game-only-site .game-rim .game-work-list p,.game-only-site .game-rim .game-copy-grid p,.game-only-site .game-rim .game-timeline p { font-size:.86rem; line-height:1.58; }
+.game-only-site .game-rim .game-timeline>div { padding:19px 0; }
+
+@media (max-width:850px) {
+  .game-only-site .game-shell { padding:0; }
+  .game-only-site .game-rim { width:100vw; height:100dvh; border:0; border-radius:0; }
+  .game-only-site .game-rim .game-screen { border-radius:0; }
+  .game-only-site .game-rim .game-layout { grid-template-columns:1fr; grid-template-rows:auto minmax(0,1fr); }
+  .game-only-site .game-rim .game-sidebar { display:block; padding:9px 12px; border-right:0; border-bottom:1px solid rgba(169,232,143,.22); }
+  .game-only-site .game-rim .player-chip,.game-only-site .game-rim .game-sidebar-meta { display:none; }
+  .game-only-site .game-rim .game-nav { display:flex; gap:6px; margin:0; overflow-x:auto; }
+  .game-only-site .game-rim .game-nav button { width:auto; min-width:max-content; min-height:40px; }
+  .game-only-site .game-rim .game-page { padding:32px 20px 50px; }
+  .game-only-site .game-rim .game-page h2 { font-size:clamp(2.7rem,11vw,4.8rem); }
+  .game-only-site .game-rim .game-top-actions button:first-child { display:inline-flex; align-items:center; }
+}
+
+@media (max-width:620px) {
+  .game-only-site .game-rim .game-topbar { min-height:54px; padding:0 14px; }
+  .game-only-site .game-rim .game-screen { grid-template-rows:54px minmax(0,1fr) 52px; }
+  .game-only-site .game-rim .game-menu-grid,.game-only-site .game-rim .game-work-list,.game-only-site .game-rim .game-copy-grid { grid-template-columns:1fr; }
+  .game-only-site .game-rim .game-menu-card { min-height:96px; }
+  .game-only-site .game-rim .game-controls-bar { min-height:52px; }
+}

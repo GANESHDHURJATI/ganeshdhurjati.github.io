@@ -76,7 +76,7 @@ const enterGame = (pageName = 'menu', trigger = document.activeElement) => {
     gameShell.focus({ preventScroll: true });
     handheld?.classList.remove('is-launching');
     window.setTimeout(() => document.body.classList.remove('game-launching'), 320);
-  }, window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 30 : 680);
+  }, window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 30 : 760);
 };
 
 const exitGame = () => {
@@ -100,6 +100,10 @@ document.querySelectorAll('[data-game-start]').forEach((trigger) => {
     event.preventDefault();
     enterGame(trigger.dataset.gameStart || 'menu', trigger);
   });
+});
+document.querySelector('[data-game-enter]')?.addEventListener('click', (event) => {
+  event.preventDefault();
+  enterGame('menu', event.currentTarget);
 });
 gameNavButtons.forEach((button) => button.addEventListener('click', () => showGamePage(button.dataset.gameNav)));
 document.querySelectorAll('[data-open-page]').forEach((button) => button.addEventListener('click', () => showGamePage(button.dataset.openPage)));
@@ -132,5 +136,4 @@ document.addEventListener('keydown', (event) => {
   const hero = document.querySelector('.handheld-hero');
   if (!hero || hero.getBoundingClientRect().bottom < 0 || /input|textarea/i.test(event.target.tagName)) return;
   if (event.key.toLowerCase() === 'a') enterGame('menu', document.querySelector('[data-game-start]'));
-  if (event.key.toLowerCase() === 'b') enterGame('work', document.querySelector('[data-game-start="work"]'));
 });
